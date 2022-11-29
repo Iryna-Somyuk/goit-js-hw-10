@@ -1,5 +1,6 @@
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { clearField } from './index.js';
 
 function errorName() {
   return Notify.failure(`Oops, there is no country with that name`);
@@ -16,5 +17,8 @@ export function fetchCountries(name) {
       }
       return resp.json();
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+      console.error(err);
+      clearField();
+    });
 }

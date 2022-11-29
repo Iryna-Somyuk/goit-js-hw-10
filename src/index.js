@@ -12,7 +12,7 @@ const MAX_COUNTRY_NUMBER = 10;
 
 input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
-function clearField() {
+export function clearField() {
   listCountry.innerHTML = '';
   infoCountry.innerHTML = '';
 }
@@ -20,7 +20,7 @@ function clearField() {
 function onSearch(evn) {
   const inputValue = evn.target.value.trim();
 
-  if (!inputValue) {
+  if (inputValue === '') {
     clearField();
     return;
   }
@@ -38,9 +38,8 @@ function renderCountries(countryData) {
   console.log(countryData);
 
   if (countryData.length >= MAX_COUNTRY_NUMBER) {
-    return Notify.info(
-      'Too many matches found. Please enter a more specific name.'
-    );
+    return Notify.info('Too many matches found. Please enter a more specific name.');
+
   } else if (countryData.length <= MAX_COUNTRY_NUMBER) {
     markupCountries(countryData);
   }
