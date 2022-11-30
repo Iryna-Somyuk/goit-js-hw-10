@@ -61,9 +61,9 @@ function markupCountries(data) {
 
   if (oneCountry) {
     markup = data.map(({ capital, population, languages }) => {
-        return `<p><span>Capital:</span>${capital}</p>
-            <p><span>Population:</span>${population}</p>        
-           <p><span>Languages:</span>${Object.values(languages).join(' ')}</p>`;
+        return `<p><span>Capital:</span> ${capital}</p>
+            <p><span>Population:</span> ${population}</p>        
+           <p><span>Languages:</span> ${Object.values(languages).join(' ')} </p>`;
       }).join('');
     infoCountry.insertAdjacentHTML('beforeend', markup);
   }
