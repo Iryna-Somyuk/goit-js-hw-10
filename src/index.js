@@ -23,9 +23,7 @@ function onSearch(evn) {
   if (inputValue === '') {
     clearField();
     return;
-  }
-
-  if (inputValue !== '') {
+  }else if (inputValue !== '') {
     fetchCountries(inputValue)
     .then(countryData => renderCountries(countryData))
     .catch(err => {
