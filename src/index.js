@@ -38,6 +38,7 @@ function renderCountries(countryData) {
   console.log(countryData);
 
   if (countryData.length >= MAX_COUNTRY_NUMBER) {
+    clearField();
     return Notify.info('Too many matches found. Please enter a more specific name.');
 
   } else if (countryData.length <= MAX_COUNTRY_NUMBER) {
